@@ -18,7 +18,7 @@ install:
   - docker-compose exec -u root node npm run build
 
 before_script:
-  - docker-compose exec -u web web composer install
+  - docker-compose exec -u web composer install
   - docker-compose exec -u web web ./vendor/bin/run drupal:site-setup
   - docker-compose exec -u web web ./vendor/bin/run drupal:site-install
 
