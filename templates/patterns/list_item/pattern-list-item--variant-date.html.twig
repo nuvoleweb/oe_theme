@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default event list item component.
+ */
+#}
+{% include '@oe_theme/compositions/ec-component-content-item/content-item-date.html.twig' with {
+  title: {
+    label: title,
+    path: url
+  },
+  date: {
+    day: date.day,
+    month: date.month,
+    month_name: date.month_name,
+    month_fullname: date.month_fullname,
+    year: date.year
+  },
+  description: detail|smart_trim(length),
+  meta: meta,
+  variant: variant
+} only %}

@@ -1,0 +1,31 @@
+component_library_ec:
+  css:
+    theme:
+      dist/ec/styles/ecl-ec-preset-legacy-website.css: {}
+      css/style-ec.css: {}
+  js:
+    dist/ec/scripts/ecl-ec-preset-legacy-website.js: {}
+    js/ecl_auto_init.js: {}
+  dependencies:
+    - core/drupal
+
+component_library_eu:
+  css:
+    theme:
+      dist/eu/styles/ecl-eu-preset-legacy-website.css: {}
+      css/style-eu.css: {}
+  js:
+    dist/eu/scripts/ecl-eu-preset-legacy-website.js: {}
+    js/ecl_auto_init.js: {}
+  dependencies:
+    - core/drupal
+
+editor:
+  css:
+    theme:
+      dist/styles/ecl-ec-preset-editor.css: {}
+
+external_svg:
+  js:
+    dist/js/svg4everybody.min.js: { minified: true }
+    js/external_svg.js: {}

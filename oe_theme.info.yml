@@ -1,0 +1,49 @@
+name: OpenEuropa Theme
+type: theme
+description: OpenEuropa base theme.
+package: OpenEuropa
+core: 8.x
+
+base theme: stable
+
+libraries:
+  - oe_theme/editor
+  - oe_theme/external_svg
+
+regions:
+  site_top_bar: "Site top bar"
+  site_header: "Site header"
+  site_header_secondary: "Site header secondary"
+  page_header: "Page header"
+  navigation: "Navigation"
+  content: "Content"
+  footer: "Footer"
+
+config_devel:
+  install:
+    - image.style.oe_theme_list_item
+    - image.style.oe_theme_list_item_featured
+    - image.style.oe_theme_list_item_2x
+    - image.style.oe_theme_list_item_featured_2x
+    - image.style.oe_theme_medium_2x_no_crop
+    - image.style.oe_theme_medium_no_crop
+    - image.style.oe_theme_small_2x_no_crop
+    - image.style.oe_theme_small_no_crop
+    - responsive_image.styles.oe_theme_main_content
+  optional:
+    - block.block.oe_theme_ec_corporate_footer
+    - block.block.oe_theme_eu_corporate_footer
+    - block.block.oe_theme_language_switcher
+    - block.block.oe_theme_main_navigation
+    - block.block.oe_theme_main_page_content
+    - block.block.oe_theme_page_header
+    - block.block.oe_theme_search_form
+    - block.block.oe_theme_site_branding
+    - block.block.oe_theme_tabs
+    - core.entity_view_display.media.av_portal_photo.oe_theme_main_content
+    - core.entity_view_display.media.av_portal_video.oe_theme_main_content
+    - core.entity_view_display.media.document.oe_theme_main_content
+    - core.entity_view_display.media.image.oe_theme_main_content
+    - core.entity_view_display.media.remote_video.oe_theme_main_content
+    - core.entity_view_display.media.video_iframe.oe_theme_main_content
+    - core.entity_view_mode.media.oe_theme_main_content

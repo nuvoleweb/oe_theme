@@ -1,0 +1,31 @@
+sudo: required
+
+git:
+  depth: 1
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.25.5
+
+before_install:
+  - docker-compose up -d
+
+install:
+  - docker-compose exec -u root node npm install --unsafe-perm
+  - docker-compose exec -u root node npm run build
+
+before_script:
+  - docker-compose exec -u web web composer install
+  - docker-compose exec -u web web ./vendor/bin/run drupal:site-setup
+  - docker-compose exec -u web web ./vendor/bin/run drupal:site-install
+
+script:
+  - docker-compose exec -u web web ./vendor/bin/grumphp run
+  - docker-compose exec -u web web ./vendor/bin/phpunit
+  - docker-compose exec -u web web ./vendor/bin/behat
+
+notifications:
+  email: false
